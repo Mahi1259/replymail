@@ -1,0 +1,11 @@
+# Secrets — never commit
+.env
+
+# Build output
+target/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.DS_Store

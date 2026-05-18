@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "Reply Assistant for Gmail",
+  "version": "1.0.0",
+  "description": "Adds a Quick Reply button to Gmail that drafts a response based on the open email.",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": [
+    "https://mail.google.com/*",
+    "http://localhost/*",
+    "http://localhost:*/*",
+    "http://127.0.0.1/*",
+    "http://127.0.0.1:*/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Reply Assistant",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}

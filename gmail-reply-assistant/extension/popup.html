@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Reply Assistant</title>
+  <style>
+    body {
+      width: 300px;
+      margin: 0;
+      padding: 16px;
+      font-family: "Google Sans", Roboto, Arial, sans-serif;
+      font-size: 14px;
+      color: #202124;
+      background: #ffffff;
+    }
+    h1 {
+      font-size: 15px;
+      margin: 0 0 14px 0;
+      color: #202124;
+    }
+    label {
+      display: block;
+      font-size: 12px;
+      color: #5f6368;
+      margin: 10px 0 4px 0;
+      font-weight: 500;
+    }
+    input[type="text"], select {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 8px 10px;
+      font-size: 14px;
+      border: 1px solid #dadce0;
+      border-radius: 4px;
+      outline: none;
+    }
+    input[type="text"]:focus, select:focus {
+      border-color: #1a73e8;
+    }
+    button {
+      width: 100%;
+      margin-top: 14px;
+      padding: 9px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #ffffff;
+      background: #1a73e8;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover { background: #1765c2; }
+    .status {
+      margin-top: 10px;
+      font-size: 12px;
+      text-align: center;
+      min-height: 16px;
+    }
+    .status.success { color: #137333; }
+    .status.error { color: #c5221f; }
+  </style>
+</head>
+<body>
+  <h1>Reply Assistant</h1>
+
+  <label for="backendUrl">Backend URL</label>
+  <input type="text" id="backendUrl" placeholder="http://localhost:8080" />
+
+  <label for="tone">Tone</label>
+  <select id="tone">
+    <option value="Professional">Professional</option>
+    <option value="Friendly">Friendly</option>
+    <option value="Concise">Concise</option>
+    <option value="Detailed">Detailed</option>
+  </select>
+
+  <button id="saveBtn">Save</button>
+  <div id="status" class="status"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
